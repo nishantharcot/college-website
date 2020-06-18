@@ -2,14 +2,16 @@
   <div class="home">
     <v-row id="screen1" app>
       <v-col id="screen1-content" cols="12" sm="12">
-        <h1 class="display-1 centerClass">HOW WILL YOU FORGE YOUR FUTURE?</h1>
+        <h1 id="mainHeading" class="display-1 centerClass">
+          HOW WILL YOU FORGE YOUR FUTURE?
+        </h1>
         <v-btn large color="info" class="mt-5">
-          <v-icon>fas fa-graduation-cap</v-icon>ENROLL TODAY
+          <v-icon class="mr-3">fas fa-graduation-cap</v-icon>ENROLL TODAY
         </v-btn>
       </v-col>
     </v-row>
     <v-row id="screen2" app>
-      <v-col id="screen1-content" cols="12" sm="12">
+      <v-col class="flexClass" cols="12" sm="12">
         <h1 class="display-1">ABOUT US</h1>
         <p class="mt-10 centerClass">
           Here you will find guidelines about how to use the portal to study at
@@ -62,7 +64,7 @@
       </v-col>
       <v-col class="order-4" cols="1"></v-col>
     </v-row>
-    <v-row id="screen4">
+    <v-row id="screen4" class="theme--dark">
       <v-col cols="1"></v-col>
       <v-col
         cols="12"
@@ -73,12 +75,17 @@
       >
         <div class="screen4Card">
           <h2 class="centerClass">{{ item.title }}</h2>
+          <hr
+            role="separator"
+            aria-orientation="horizontal"
+            class="v-divider lineAdjust"
+          />
           <h4 class="centerClass">{{ item.label }}</h4>
         </div>
       </v-col>
       <v-col cols="1"></v-col>
     </v-row>
-    <v-row id="screen5">
+    <v-row class="mt-10" id="screen5">
       <v-col cols="2"></v-col>
       <v-col class="flexClass" cols="8">
         <h1 class="display-1">WHAT'S HAPPENING</h1>
@@ -96,7 +103,10 @@
     <v-row id="screen6">
       <v-col class="flexClass" cols="12" sm="12">
         <h1 class="display-1 centerClass">YOUR FUTURE STARTS HERE.</h1>
-        <v-btn large color="info" class="mt-5">LEARN MORE</v-btn>
+        <v-btn large class="mt-5">
+          LEARN MORE
+          <v-icon class="ml-2">mdi mdi-open-in-new</v-icon>
+        </v-btn>
       </v-col>
     </v-row>
   </div>
@@ -109,30 +119,45 @@
   justify-content: center;
   align-items: center;
 }
+hr {
+  width: 20%;
+  margin: 0 auto;
+  border-top: 5px solid aqua;
+}
+#mainHeading {
+  font-weight: 900 !important;
+}
 #screen1 {
-  min-height: 70vh;
+  min-height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  // background-color: yellow;
+  background-image: url("../assets/home-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
 }
 #screen1-content {
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: rgba(black, 0.7);
+  z-index: 2;
+  // color: darkblue;
 }
 
 #screen2 {
   min-height: 40vh;
   // height: 40vh;
-  // background-color: pink;
+  // background-color: aqua;
 }
 
 #screen3 {
   min-height: 80vh;
   // height: 80vh;
-  // background-color: olive;
+  // background-color: aqua;
 }
 
 #screen4 {
@@ -141,7 +166,8 @@
   display: flex;
   justify-content: space-around;
   align-content: space-around;
-  // background-color: pink;
+  background-color: #1a237e;
+  color: white;
 }
 .screen4Card {
   display: flex;
@@ -156,6 +182,7 @@
 
 #screen6 {
   height: 40vh;
+  background-color: #536dfe;
 }
 
 .centerClass {

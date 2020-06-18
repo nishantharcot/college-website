@@ -98,7 +98,7 @@
       </v-col>
       <v-col cols="1"></v-col>
     </v-row>
-    <v-row id="screen5">
+    <v-row id="screen5" class="theme--dark">
       <v-col cols="1"></v-col>
       <v-col
         cols="12"
@@ -109,6 +109,11 @@
       >
         <div class="screen4Card">
           <h2 class="centerClass">{{ item.title }}</h2>
+          <hr
+            role="separator"
+            aria-orientation="horizontal"
+            class="v-divider lineAdjust"
+          />
           <h4 class="centerClass">{{ item.label }}</h4>
         </div>
       </v-col>
@@ -207,8 +212,8 @@
     <v-row id="last-screen">
       <v-col cols="1"></v-col>
       <v-col class="flexClass" cols="12" md="10">
-        <h1 class="mx-auto centerClass">YOUR FUTURE STARTS HERE.</h1>
-        <h3 class="mx-auto centerClass">Health and Social Care Courses</h3>
+        <h2 class="mx-auto centerClass">YOUR FUTURE STARTS HERE.</h2>
+        <h4 class="mx-auto centerClass">Health and Social Care Courses</h4>
         <p>
           Browse through our available courses in health and social care to find
           the perfect course to progress you career. We offer Cache
@@ -216,8 +221,8 @@
           through our virtual campus with expert support throughout your
           enrolment.
         </p>
-        <v-btn x-large color="info">
-          <v-icon>fas fa-graduation-cap</v-icon>ENROLL TODAY
+        <v-btn x-large>
+          <v-icon class="mr-3">fas fa-graduation-cap</v-icon>ENROLL TODAY
         </v-btn>
       </v-col>
       <v-col cols="1"></v-col>
@@ -338,11 +343,19 @@ export default {
   display: flex;
   justify-content: space-around;
   align-content: space-around;
-  // background-color: pink;
+  background-color: #1a237e;
+  color: white;
+}
+
+hr {
+  width: 20%;
+  margin: 0 auto;
+  border-top: 5px solid aqua;
 }
 
 #last-screen {
   min-height: 50vh;
+  background-color: #536dfe;
 }
 
 #last-screen-left {

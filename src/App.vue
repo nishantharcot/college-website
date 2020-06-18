@@ -2,7 +2,7 @@
   <v-app id="inspire">
     <v-app-bar app>
       <!-- <v-img src="./assets/collegeLogo.png"></v-img> -->
-      <v-toolbar-title>Becton College</v-toolbar-title>
+      <v-toolbar-title class="display-1">Becton College</v-toolbar-title>
       <v-spacer></v-spacer>
       <div v-if="$vuetify.breakpoint.smAndDown">
         <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
@@ -71,14 +71,14 @@
           </v-col>
         </v-row>
       </v-container>
-      <v-card class="flex" flat tile>
-        <v-card-title class="teal">
-          <strong class="subheading">&copy; All rights reserved</strong>
+      <v-card color="grey darken-3" class="flex" flat tile>
+        <v-card-title>
+          <strong class="subheading footer">&copy; All rights reserved</strong>
 
           <v-spacer></v-spacer>
 
-          <v-btn v-for="icon in icons" :key="icon" class="mx-4" dark icon>
-            <v-icon size="24px">{{ icon }}</v-icon>
+          <v-btn v-for="icon in icons" :key="icon" class="mx-4" icon>
+            <v-icon class="footer" size="24px">{{ icon }}</v-icon>
           </v-btn>
         </v-card-title>
       </v-card>
@@ -86,6 +86,11 @@
   </v-app>
 </template>
 
+<style lang="scss" scoped>
+.footer {
+  color: white;
+}
+</style>
 <script>
 export default {
   name: "LayoutsDemosBaselineFlipped",

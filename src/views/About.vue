@@ -2,28 +2,23 @@
   <div class="about">
     <v-row id="screen1" app>
       <v-col id="screen1-content" cols="12" sm="12">
-        <h1 class="display-1 centerClass">ABOUT US</h1>
+        <h1 id="mainHeading" class="display-1 centerClass">ABOUT US</h1>
       </v-col>
     </v-row>
-    <v-row id="screen2">
+    <v-row class="mt-15" id="screen2">
       <v-col cols="1"></v-col>
       <v-col cols="12" md="10">
-        <v-card color="basil">
+        <v-card>
           <!-- <v-card-title class="text-center justify-center py-6">
             <h1 class="font-weight-bold display-3 basil--text">BASiL</h1>
           </v-card-title>-->
-          <v-tabs
-            v-model="tab"
-            background-color="transparent"
-            color="basil"
-            grow
-          >
+          <v-tabs v-model="tab" background-color="transparent" grow>
             <v-tab v-for="item in items" :key="item">{{ item }}</v-tab>
           </v-tabs>
 
           <v-tabs-items v-model="tab">
             <v-tab-item v-for="item in items" :key="item">
-              <v-card color="basil" flat>
+              <v-card flat>
                 <v-card-text v-if="item === 'ABOUT LCT'">
                   <div class="about-content">
                     <h2>About</h2>
@@ -159,7 +154,10 @@
     </v-row>
     <v-row id="screen3" app>
       <h2>YOUR FUTURE STARTS HERE.</h2>
-      <v-btn color="info">LEARN MORE</v-btn>
+      <v-btn large class="mt-5">
+        LEARN MORE
+        <v-icon class="ml-2">mdi mdi-open-in-new</v-icon>
+      </v-btn>
     </v-row>
   </div>
 </template>
@@ -192,18 +190,29 @@ export default {
   text-align: center;
 }
 #screen1 {
-  min-height: 40vh;
+  min-height: 60vh;
   display: flex;
   justify-content: center;
   align-items: center;
   // background-color: yellow;
+  background-image: url("../assets/about.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+#mainHeading {
+  font-weight: 900 !important;
 }
 
 #screen1-content {
+  min-height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: rgba(black, 0.7);
+  z-index: 2;
 }
 
 #screen2 {
@@ -215,5 +224,6 @@ export default {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  background-color: #536dfe;
 }
 </style>

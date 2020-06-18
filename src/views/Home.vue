@@ -18,8 +18,8 @@
       </v-col>
     </v-row>
     <v-row id="screen3">
-      <v-col cols="1"></v-col>
-      <v-col cols="12" sm="12" md="5">
+      <v-col class="order-1" cols="1"></v-col>
+      <v-col class="order-3" cols="12" sm="12" md="5">
         <h3 class="mb-5">Welcome to London College of Technology</h3>
         <p>
           London College Of Technology is an education institute situated in the
@@ -44,10 +44,23 @@
           Master programs offered at our partnership colleges and Universities.
         </p>
       </v-col>
-      <v-col cols="12" sm="12" md="5">
-        <v-img src="../assets/about-us2.jpg"></v-img>
+      <v-col
+        v-if="$vuetify.breakpoint.mdAndUp"
+        class="order-3"
+        cols="12"
+        sm="12"
+        md="5"
+      >
+        <div>
+          <v-img src="../assets/about-us2.jpg"></v-img>
+        </div>
       </v-col>
-      <v-col cols="1"></v-col>
+      <v-col class="order-2" cols="12" sm="12" md="5" v-else>
+        <div>
+          <v-img src="../assets/about-us2.jpg"></v-img>
+        </div>
+      </v-col>
+      <v-col class="order-4" cols="1"></v-col>
     </v-row>
     <v-row id="screen4">
       <v-col cols="1"></v-col>
@@ -155,9 +168,6 @@
 
 export default {
   name: "Home",
-  components: {
-    //
-  },
   data: () => ({
     collegeStatistics: [
       {

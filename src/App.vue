@@ -134,16 +134,16 @@ export default {
         url: "/about"
       },
       {
-        label: "Programs",
-        url: "/programs"
-      },
-      {
         label: "Campus",
         url: "/campus"
       },
       {
         label: "Degree",
         url: "/degree"
+      },
+      {
+        label: "Programs",
+        url: "/programs"
       },
       {
         label: "Events",

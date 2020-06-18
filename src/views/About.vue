@@ -159,7 +159,7 @@
     </v-row>
     <v-row id="screen3" app>
       <h2>YOUR FUTURE STARTS HERE.</h2>
-      <v-btn>LEARN MORE</v-btn>
+      <v-btn color="info">LEARN MORE</v-btn>
     </v-row>
   </div>
 </template>

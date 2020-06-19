@@ -10,9 +10,14 @@
         <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       </div>
       <div v-else>
-        <v-btn v-for="link in links" :key="link.label" :to="link.url" text>{{
-          link.label
-        }}</v-btn>
+        <v-btn
+          active-class="warning"
+          v-for="link in links"
+          :key="link.label"
+          :to="link.url"
+          text
+          >{{ link.label }}</v-btn
+        >
       </div>
     </v-app-bar>
 

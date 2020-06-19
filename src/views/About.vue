@@ -153,8 +153,8 @@
       <v-col cols="1"></v-col>
     </v-row>
     <v-row id="screen3" app>
-      <h2>YOUR FUTURE STARTS HERE.</h2>
-      <v-btn large class="mt-5">
+      <h2 class="white--text">YOUR FUTURE STARTS HERE.</h2>
+      <v-btn large class="mt-5" color="warning">
         LEARN MORE
         <v-icon class="ml-2">mdi mdi-open-in-new</v-icon>
       </v-btn>
@@ -174,11 +174,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.basil {
-  background-color: #fffbe6 !important;
-}
-.basil--text {
-  color: #356859 !important;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto Slab", serif !important;
 }
 .about-content {
   display: flex;
@@ -190,14 +192,14 @@ export default {
   text-align: center;
 }
 #screen1 {
-  min-height: 60vh;
+  min-height: 50vh;
   display: flex;
   justify-content: center;
   align-items: center;
   // background-color: yellow;
   background-image: url("../assets/about.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: top;
   color: white;
 }
 
@@ -206,7 +208,7 @@ export default {
 }
 
 #screen1-content {
-  min-height: 60vh;
+  min-height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: center;

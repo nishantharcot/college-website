@@ -2,8 +2,8 @@
   <div>
     <v-row id="screen1" app>
       <v-col id="screen1-content" cols="12" sm="12">
-        <h1 class="display-1 centerClass">DEGREES</h1>
-        <h5 class="centerClass mt-10">
+        <h1 id="mainHeading" class="display-1 centerClass">DEGREES</h1>
+        <h5 id="secondHeading" class="centerClass mt-10">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit phasellus
           trist.
         </h5>
@@ -99,7 +99,7 @@
       </v-col>
       <v-col class="order-4" cols="1"></v-col>
     </v-row>
-    <v-row id="screen4">
+    <v-row id="screen4" class="theme--dark">
       <v-col cols="1"></v-col>
       <v-col
         cols="12"
@@ -110,6 +110,11 @@
       >
         <div class="screen4Card">
           <h2 class="centerClass">{{ item.title }}</h2>
+          <hr
+            role="separator"
+            aria-orientation="horizontal"
+            class="v-divider lineAdjust"
+          />
           <h4 class="centerClass">{{ item.label }}</h4>
         </div>
       </v-col>
@@ -125,8 +130,8 @@
           lacinia ornare, nunc mauris aliquam erat, scelerisque laoreet nunc
           lectus utd.
         </p>
-        <v-btn large color="info" class="mt-5 mx-auto">
-          <v-icon>fas fa-graduation-cap</v-icon>ENROLL TODAY
+        <v-btn x-large color="warning" class="mt-5">
+          <v-icon class="mr-3">fas fa-graduation-cap</v-icon>ENROLL TODAY
         </v-btn>
       </v-col>
       <v-col cols="1"></v-col>
@@ -160,23 +165,51 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto Slab", serif !important;
+}
 #screen1 {
-  min-height: 40vh;
+  min-height: 50vh;
   display: flex;
   justify-content: center;
   align-items: center;
   // background-color: yellow;
+  background-image: url("../assets/gallery.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+#mainHeading {
+  font-weight: 900 !important;
+}
+
+#secondHeading {
+  font-weight: 600;
 }
 
 #screen1-content {
+  min-height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: rgba(black, 0.7);
+  z-index: 2;
+}
+hr {
+  width: 20%;
+  margin: 0 auto;
+  border-top: 5px solid aqua;
 }
 
 .screen2 {
-  min-height: 70vh;
+  min-height: 65vh;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -188,7 +221,15 @@ export default {
   display: flex;
   justify-content: space-around;
   align-content: space-around;
-  // background-color: pink;
+  background-color: #1a237e;
+  color: white;
+}
+
+.screen4Card {
+  display: flex;
+  height: 15vh;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 #screen3 {

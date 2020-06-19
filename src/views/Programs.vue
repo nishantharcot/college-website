@@ -1,11 +1,16 @@
 <template>
   <div>
-    <v-row>
+    <v-row id="screen1" app>
+      <v-col id="screen1-content" cols="12" sm="12">
+        <h1 id="mainHeading" class="display-1 centerClass">OUR COURSES</h1>
+      </v-col>
+    </v-row>
+    <v-row class="mb-5">
       <v-col cols="1"></v-col>
       <v-col cols="10">
-        <h1 id="programHeading" class="display basil--text">OUR COURSES</h1>
+        <h2 class="display my-4">OTHM COURSES</h2>
         <v-expansion-panels>
-          <v-expansion-panel v-for="course in courses" :key="course.title">
+          <v-expansion-panel v-for="course in othmCourses" :key="course.title">
             <v-expansion-panel-header>{{
               course.title
             }}</v-expansion-panel-header>
@@ -18,7 +23,30 @@
                 <Program :course="course" />
               </div>
               <div v-if="$vuetify.breakpoint.smAndDown">
-                <v-btn color="success">Learn More</v-btn>
+                <v-btn color="warning">Learn More</v-btn>
+              </div>
+            </v-expansion-panel-content>
+          </v-expansion-panel>
+        </v-expansion-panels>
+        <h2 class="display my-4">QUALIFI COURSES</h2>
+        <v-expansion-panels>
+          <v-expansion-panel
+            v-for="course in qualifiCourses"
+            :key="course.title"
+          >
+            <v-expansion-panel-header>{{
+              course.title
+            }}</v-expansion-panel-header>
+            <v-expansion-panel-content>
+              <div v-if="$vuetify.breakpoint.smAndDown">
+                <h3 class="display mb-3">Overview</h3>
+                <p>{{ course.overview }}</p>
+              </div>
+              <div v-if="$vuetify.breakpoint.mdAndUp">
+                <Program :course="course" />
+              </div>
+              <div v-if="$vuetify.breakpoint.smAndDown">
+                <v-btn color="warning">Learn More</v-btn>
               </div>
             </v-expansion-panel-content>
           </v-expansion-panel>
@@ -27,8 +55,11 @@
       <v-col cols="1"></v-col>
     </v-row>
     <v-row id="screen3" app>
-      <h2>YOUR FUTURE STARTS HERE.</h2>
-      <v-btn color="info">LEARN MORE</v-btn>
+      <h2 class="white--text">YOUR FUTURE STARTS HERE.</h2>
+      <v-btn color="warning" large class="mt-5">
+        LEARN MORE
+        <v-icon class="ml-2">mdi mdi-open-in-new</v-icon>
+      </v-btn>
     </v-row>
   </div>
 </template>
@@ -37,16 +68,16 @@
 import Program from "./Program.vue";
 export default {
   data: () => ({
-    courses: [
+    othmCourses: [
       {
         title: "OTHM LEVEL 3 CERTIFICATE IN BUSINESS STUDIES",
         overview:
-          "The objective of Level 3 Certificate in Business Studies qualification is to provide learners with an in depth understanding of the operations and structure of businesses. Successful completion of this qualification will equip learners with some of the underpinning knowledge and skills required to succeed in employment or further studies."
+          "The objective of Level 3 Certificate in Business Studies qualification is to provide learners with an in depth understanding of the operations and structure of businesses. warningful completion of this qualification will equip learners with some of the underpinning knowledge and skills required to succeed in employment or further studies."
       },
       {
         title: "OTHM LEVEL 3 DIPLOMA IN BUSINESS STUDIES",
         overview:
-          "The objective of Level 3 Diploma  in Business Studies qualification is to provide learners with an in depth understanding of the operations and structure of businesses. Successful completion of this qualification will equip learners with some of the underpinning knowledge and skills required to succeed in employment or further studies."
+          "The objective of Level 3 Diploma  in Business Studies qualification is to provide learners with an in depth understanding of the operations and structure of businesses. warningful completion of this qualification will equip learners with some of the underpinning knowledge and skills required to succeed in employment or further studies."
       },
       {
         title: "OTHM LEVEL 4 DIPLOMA IN BUSINESS MANAGEMENT",
@@ -56,8 +87,10 @@ export default {
       {
         title: "OTHM LEVEL 6 DIPLOMA IN BUSINESS MANAGEMENT",
         overview:
-          "The objective of the OTHM Level 6 Diploma in Business Management qualification is to provide learners with an excellent foundation for a career in a range of organisations. It designed to ensure that each learner is ‘business ready’: a confident, independent thinker with a detailed knowledge of business and management and equipped with the skills to adapt rapidly to change. The content of the qualification is focused on leadership and people management, strategic human resource management, operations management, sustainable business practice, financial decision making as well as the business research skills expected of a manager. The qualification is ideal for those who have started, or are planning to move into, a career in private or public sector business. Successful completion of the Level 6 Diploma in Business Management qualification will provide learners with the opportunity to progress to further study or employment."
-      },
+          "The objective of the OTHM Level 6 Diploma in Business Management qualification is to provide learners with an excellent foundation for a career in a range of organisations. It designed to ensure that each learner is ‘business ready’: a confident, independent thinker with a detailed knowledge of business and management and equipped with the skills to adapt rapidly to change. The content of the qualification is focused on leadership and people management, strategic human resource management, operations management, sustainable business practice, financial decision making as well as the business research skills expected of a manager. The qualification is ideal for those who have started, or are planning to move into, a career in private or public sector business. warningful completion of the Level 6 Diploma in Business Management qualification will provide learners with the opportunity to progress to further study or employment."
+      }
+    ],
+    qualifiCourses: [
       {
         title: "QUALIFI LEVEL 3 DIPLOMA IN BUSINESS MANAGEMENT",
         overview:
@@ -102,6 +135,40 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto Slab", serif !important;
+}
+#screen1 {
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // background-color: yellow;
+  background-image: url("../assets/marketing.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+#mainHeading {
+  font-weight: 900 !important;
+}
+
+#screen1-content {
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(black, 0.7);
+  z-index: 2;
+}
+
 #programHeading {
   display: flex;
   justify-content: center;
@@ -113,6 +180,7 @@ export default {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  background-color: #536dfe;
 }
 .basil {
   background-color: #fffbe6 !important;

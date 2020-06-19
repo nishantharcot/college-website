@@ -2,8 +2,8 @@
   <div>
     <v-row id="screen1" app>
       <v-col id="screen1-content" cols="12" sm="12">
-        <h1 class="display-1 centerClass mb-5">CAMPUS LIFE</h1>
-        <ol class="ml-5">
+        <h1 class="display-1 centerClass mainHeading mb-5">CAMPUS LIFE</h1>
+        <ol class="ml-5 secondHeading">
           <li>What are three things you are looking forward to in college?</li>
           <li>What makes you want to go to college?</li>
           <li>What are some differences between high school and college?</li>
@@ -130,11 +130,11 @@
       </v-col>
       <v-col cols="1"></v-col>
     </v-row>
-    <v-row class="screen4">
+    <v-row class="screen4 mb-5">
       <v-col cols="1"></v-col>
-      <v-col class="mx-auto eventCard" cols="12" md="3">
+      <v-col class="mx-auto" cols="12" md="3">
         <!-- <v-img src="../assets/event-1.jpg"></v-img> -->
-        <v-card class="mx-auto" max-width="400">
+        <v-card class="mx-auto eventCard" max-width="400" height="100%">
           <v-img
             class="white--text align-end"
             height="200px"
@@ -151,15 +151,15 @@
           </v-card-text>
 
           <v-card-actions>
-            <v-btn color="orange" text>Share</v-btn>
+            <v-btn color="warning" text>Share</v-btn>
 
-            <v-btn color="orange" text>Explore</v-btn>
+            <v-btn color="warning" text>Explore</v-btn>
           </v-card-actions>
         </v-card>
       </v-col>
-      <v-col class="mx-auto eventCard" cols="12" md="3">
+      <v-col class="mx-auto" cols="12" md="3">
         <!-- <v-img src="../assets/event-1.jpg"></v-img> -->
-        <v-card class="mx-auto" max-width="400">
+        <v-card class="mx-auto eventCard" max-width="400" height="100%">
           <v-img
             class="white--text align-end"
             height="200px"
@@ -176,15 +176,15 @@
           </v-card-text>
 
           <v-card-actions>
-            <v-btn color="orange" text>Share</v-btn>
+            <v-btn color="warning" text>Share</v-btn>
 
-            <v-btn color="orange" text>Explore</v-btn>
+            <v-btn color="warning" text>Explore</v-btn>
           </v-card-actions>
         </v-card>
       </v-col>
-      <v-col class="mx-auto eventCard" cols="12" md="3">
+      <v-col class="mx-auto" cols="12" md="3">
         <!-- <v-img src="../assets/event-1.jpg"></v-img> -->
-        <v-card class="mx-auto" max-width="400">
+        <v-card class="mx-auto eventCard" max-width="400" height="100%">
           <v-img
             class="white--text align-end"
             height="200px"
@@ -201,9 +201,9 @@
           </v-card-text>
 
           <v-card-actions>
-            <v-btn color="orange" text>Share</v-btn>
+            <v-btn color="warning" text>Share</v-btn>
 
-            <v-btn color="orange" text>Explore</v-btn>
+            <v-btn color="warning" text>Explore</v-btn>
           </v-card-actions>
         </v-card>
       </v-col>
@@ -212,16 +212,20 @@
     <v-row id="last-screen">
       <v-col cols="1"></v-col>
       <v-col class="flexClass" cols="12" md="10">
-        <h2 class="mx-auto centerClass">YOUR FUTURE STARTS HERE.</h2>
-        <h4 class="mx-auto centerClass">Health and Social Care Courses</h4>
-        <p>
+        <h2 class="mx-auto centerClass white--text">
+          YOUR FUTURE STARTS HERE.
+        </h2>
+        <h4 class="mx-auto centerClass white--text">
+          Health and Social Care Courses
+        </h4>
+        <p class="white--text">
           Browse through our available courses in health and social care to find
           the perfect course to progress you career. We offer Cache
           qualifications in health and social care which can be studied online
           through our virtual campus with expert support throughout your
           enrolment.
         </p>
-        <v-btn x-large>
+        <v-btn color="warning" x-large>
           <v-icon class="mr-3">fas fa-graduation-cap</v-icon>ENROLL TODAY
         </v-btn>
       </v-col>
@@ -274,6 +278,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto Slab", serif !important;
+}
 .centerClass {
   text-align: center;
 }
@@ -284,8 +296,9 @@ export default {
 .flexClass {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
+  text-align: center;
 }
 .screen4Card {
   display: flex;
@@ -299,21 +312,39 @@ export default {
 }
 
 .eventCard {
-  min-height: 70vh !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 #screen1 {
-  min-height: 40vh;
+  min-height: 50vh;
   display: flex;
   justify-content: center;
   align-items: center;
   // background-color: yellow;
+  background-image: url("../assets/pro.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
 }
+
+.mainHeading {
+  font-weight: 900 !important;
+}
+
+.secondHeading {
+  font-weight: 600;
+}
+
 #screen1-content {
+  min-height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: rgba(black, 0.7);
+  z-index: 2;
 }
 
 .screen2 {
@@ -335,6 +366,9 @@ export default {
 
 .screen4 {
   min-height: 50vh;
+  // display: flex;
+  // align-items: stretch;
+  // justify-items: stretch;
 }
 
 #screen5 {

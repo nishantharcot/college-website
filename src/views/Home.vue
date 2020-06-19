@@ -1,11 +1,11 @@
 <template>
-  <div class="home">
+  <div class="home pb-0">
     <v-row id="screen1" app>
       <v-col id="screen1-content" cols="12" sm="12">
         <h1 id="mainHeading" class="display-1 centerClass">
           HOW WILL YOU FORGE YOUR FUTURE?
         </h1>
-        <v-btn large color="info" class="mt-5">
+        <v-btn x-large color="warning" class="mt-5">
           <v-icon class="mr-3">fas fa-graduation-cap</v-icon>ENROLL TODAY
         </v-btn>
       </v-col>
@@ -100,10 +100,12 @@
       </v-col>
       <v-col cols="2"></v-col>
     </v-row>
-    <v-row id="screen6">
+    <v-row id="screen6" class="mt-0">
       <v-col class="flexClass" cols="12" sm="12">
-        <h1 class="display-1 centerClass">YOUR FUTURE STARTS HERE.</h1>
-        <v-btn large class="mt-5">
+        <h1 class="display-1 centerClass white--text">
+          YOUR FUTURE STARTS HERE.
+        </h1>
+        <v-btn large class="mt-5" color="warning">
           LEARN MORE
           <v-icon class="ml-2">mdi mdi-open-in-new</v-icon>
         </v-btn>
@@ -113,6 +115,14 @@
 </template>
 
 <style lang="scss" scoped>
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto Slab", serif !important;
+}
 .flexClass {
   display: flex;
   flex-direction: column;

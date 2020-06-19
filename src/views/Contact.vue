@@ -2,7 +2,7 @@
   <div>
     <v-row id="screen1" app>
       <v-col id="screen1-content" cols="12" sm="12">
-        <h1 class="display-1 centerClass">CONTACT US</h1>
+        <h1 id="mainHeading" class="display-1 centerClass">CONTACT US</h1>
       </v-col>
     </v-row>
     <v-row class="screen2">
@@ -36,7 +36,7 @@
       <v-col class="flexClass" cols="12" md="10">
         <h1 class="mx-auto centerClass">ENROLL FAST</h1>
         <p>Admission for Fall 2021 classes closes on Aug. 1!</p>
-        <v-btn x-large color="info">
+        <v-btn x-large color="warning">
           <v-icon>fas fa-graduation-cap</v-icon>ENROLL TODAY
         </v-btn>
       </v-col>
@@ -50,6 +50,14 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto Slab", serif !important;
+}
 .centerClass {
   text-align: center;
 }
@@ -60,17 +68,29 @@ export default {};
   align-items: center;
 }
 #screen1 {
-  min-height: 40vh;
+  min-height: 50vh;
   display: flex;
   justify-content: center;
   align-items: center;
   // background-color: yellow;
+  background-image: url("../assets/contact.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
 }
+
+#mainHeading {
+  font-weight: 900 !important;
+}
+
 #screen1-content {
+  min-height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: rgba(black, 0.7);
+  z-index: 2;
 }
 
 #last-screen {

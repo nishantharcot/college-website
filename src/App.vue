@@ -2,9 +2,9 @@
   <v-app id="inspire">
     <v-app-bar app>
       <!-- <v-img src="./assets/collegeLogo.png"></v-img> -->
-      <v-toolbar-title id="mainHeading" class="display-1"
-        >Becton College</v-toolbar-title
-      >
+      <v-toolbar-title id="mainHeading" class="display-1">
+        Becton College
+      </v-toolbar-title>
       <v-spacer></v-spacer>
       <div v-if="$vuetify.breakpoint.smAndDown">
         <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>

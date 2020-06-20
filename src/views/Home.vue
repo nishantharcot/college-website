@@ -64,27 +64,7 @@
       </v-col>
       <v-col class="order-4" cols="1"></v-col>
     </v-row>
-    <v-row id="screen4" class="theme--dark">
-      <v-col cols="1"></v-col>
-      <v-col
-        cols="12"
-        md="2"
-        sm="12"
-        v-for="item in collegeStatistics"
-        :key="item.title"
-      >
-        <div class="screen4Card">
-          <h2 class="centerClass">{{ item.title }}</h2>
-          <hr
-            role="separator"
-            aria-orientation="horizontal"
-            class="v-divider lineAdjust"
-          />
-          <h4 class="centerClass">{{ item.label }}</h4>
-        </div>
-      </v-col>
-      <v-col cols="1"></v-col>
-    </v-row>
+    <CollegeStats />
     <v-row class="mt-10" id="screen5">
       <v-col cols="2"></v-col>
       <v-col class="flexClass" cols="8">
@@ -129,11 +109,6 @@ h6 {
   justify-content: center;
   align-items: center;
 }
-hr {
-  width: 20%;
-  margin: 0 auto;
-  border-top: 5px solid aqua;
-}
 #mainHeading {
   font-weight: 900 !important;
 }
@@ -170,22 +145,6 @@ hr {
   // background-color: aqua;
 }
 
-#screen4 {
-  // height: 40vh;
-  min-height: 40vh;
-  display: flex;
-  justify-content: space-around;
-  align-content: space-around;
-  background-color: #1a237e;
-  color: white;
-}
-.screen4Card {
-  display: flex;
-  height: 15vh;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
 // #screen5 {
 //   // height: 50vh;
 // }
@@ -202,28 +161,15 @@ hr {
 
 <script>
 // @ is an alias to /src
+import CollegeStats from "@/components/CollegeStats.vue";
 
 export default {
   name: "Home",
   data: () => ({
-    collegeStatistics: [
-      {
-        title: 19228,
-        label: "Success Stories"
-      },
-      {
-        title: 9213,
-        label: "Courses"
-      },
-      {
-        title: 1742,
-        label: "Happy Students"
-      },
-      {
-        title: 67,
-        label: "Years Experience"
-      }
-    ]
-  })
+    //
+  }),
+  components: {
+    CollegeStats
+  }
 };
 </script>

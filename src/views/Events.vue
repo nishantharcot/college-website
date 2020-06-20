@@ -1,10 +1,6 @@
 <template>
   <div>
-    <v-row id="screen1" app>
-      <v-col id="screen1-content" cols="12" sm="12">
-        <h1 class="display-1 centerClass mainHeading">Gallery</h1>
-      </v-col>
-    </v-row>
+    <StartScreen pageHeading="GALLERY" />
     <v-row class="screen2 mt-n4">
       <v-col cols="1"></v-col>
       <v-col cols="12" sm="12" md="5">
@@ -50,11 +46,16 @@
 </template>
 
 <script>
+import StartScreen from "@/components/StartScreen.vue";
+
 export default {
   data: () => ({
     width: 450,
     height: 300
-  })
+  }),
+  components: {
+    StartScreen
+  }
 };
 </script>
 
@@ -67,31 +68,8 @@ h5,
 h6 {
   font-family: "Roboto Slab", serif !important;
 }
-.centerClass {
-  text-align: center;
-}
-.mainHeading {
-  font-weight: 900;
-}
 #screen1 {
-  min-height: 50vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  // background-color: yellow;
   background-image: url("../assets/article-4.jpg");
-  background-size: cover;
-  background-position: center;
-  color: white;
-}
-#screen1-content {
-  min-height: 50vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(black, 0.7);
-  z-index: 2;
 }
 .screen2 {
   min-height: 65vh;

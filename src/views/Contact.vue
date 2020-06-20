@@ -1,10 +1,6 @@
 <template>
   <div>
-    <v-row id="screen1" app>
-      <v-col id="screen1-content" cols="12" sm="12">
-        <h1 id="mainHeading" class="display-1 centerClass">CONTACT US</h1>
-      </v-col>
-    </v-row>
+    <StartScreen pageHeading="CONTACT US" />
     <v-row class="screen2">
       <v-col cols="1"></v-col>
       <v-col cols="12" sm="12" md="5">
@@ -46,7 +42,12 @@
 </template>
 
 <script>
-export default {};
+import StartScreen from "@/components/StartScreen.vue";
+export default {
+  components: {
+    StartScreen
+  }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -68,29 +69,7 @@ h6 {
   align-items: center;
 }
 #screen1 {
-  min-height: 50vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  // background-color: yellow;
   background-image: url("../assets/contact.jpg");
-  background-size: cover;
-  background-position: center;
-  color: white;
-}
-
-#mainHeading {
-  font-weight: 900 !important;
-}
-
-#screen1-content {
-  min-height: 50vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(black, 0.7);
-  z-index: 2;
 }
 
 #last-screen {

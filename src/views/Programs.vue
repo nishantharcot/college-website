@@ -1,10 +1,6 @@
 <template>
   <div>
-    <v-row id="screen1" app>
-      <v-col id="screen1-content" cols="12" sm="12">
-        <h1 id="mainHeading" class="display-1 centerClass">OUR COURSES</h1>
-      </v-col>
-    </v-row>
+    <StartScreen pageHeading="OUR COURSES" />
     <v-row class="mb-5">
       <v-col cols="1"></v-col>
       <v-col cols="10">
@@ -66,6 +62,8 @@
 
 <script>
 import Program from "./Program.vue";
+import StartScreen from "@/components/StartScreen.vue";
+
 export default {
   data: () => ({
     othmCourses: [
@@ -129,7 +127,8 @@ export default {
     ]
   }),
   components: {
-    Program
+    Program,
+    StartScreen
   }
 };
 </script>
@@ -144,29 +143,7 @@ h6 {
   font-family: "Roboto Slab", serif !important;
 }
 #screen1 {
-  min-height: 50vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  // background-color: yellow;
   background-image: url("../assets/marketing.jpg");
-  background-size: cover;
-  background-position: center;
-  color: white;
-}
-
-#mainHeading {
-  font-weight: 900 !important;
-}
-
-#screen1-content {
-  min-height: 50vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(black, 0.7);
-  z-index: 2;
 }
 
 #programHeading {
@@ -181,11 +158,5 @@ h6 {
   justify-content: space-around;
   align-items: center;
   background-color: #536dfe;
-}
-.basil {
-  background-color: #fffbe6 !important;
-}
-.basil--text {
-  color: #356859 !important;
 }
 </style>

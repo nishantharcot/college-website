@@ -1,14 +1,9 @@
 <template>
   <div>
-    <v-row id="screen1" app>
-      <v-col id="screen1-content" cols="12" sm="12">
-        <h1 id="mainHeading" class="display-1 centerClass">DEGREES</h1>
-        <h5 id="secondHeading" class="centerClass mt-10">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit phasellus
-          trist.
-        </h5>
-      </v-col>
-    </v-row>
+    <StartScreen
+      pageHeading="DEGREES"
+      caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit phasellus trist."
+    />
     <v-row class="screen2">
       <v-col cols="1"></v-col>
       <v-col cols="12" sm="12" md="5">
@@ -99,27 +94,7 @@
       </v-col>
       <v-col class="order-4" cols="1"></v-col>
     </v-row>
-    <v-row id="screen4" class="theme--dark">
-      <v-col cols="1"></v-col>
-      <v-col
-        cols="12"
-        md="2"
-        sm="12"
-        v-for="item in collegeStatistics"
-        :key="item.title"
-      >
-        <div class="screen4Card">
-          <h2 class="centerClass">{{ item.title }}</h2>
-          <hr
-            role="separator"
-            aria-orientation="horizontal"
-            class="v-divider lineAdjust"
-          />
-          <h4 class="centerClass">{{ item.label }}</h4>
-        </div>
-      </v-col>
-      <v-col cols="1"></v-col>
-    </v-row>
+    <CollegeStats />
     <v-row id="screen3" app>
       <v-col cols="1"></v-col>
       <v-col class="centerClass" cols="10">
@@ -140,27 +115,16 @@
 </template>
 
 <script>
+import CollegeStats from "@/components/CollegeStats.vue";
+import StartScreen from "@/components/StartScreen.vue";
 export default {
   data: () => ({
-    collegeStatistics: [
-      {
-        title: 19228,
-        label: "Success Stories"
-      },
-      {
-        title: 9213,
-        label: "Courses"
-      },
-      {
-        title: 1742,
-        label: "Happy Students"
-      },
-      {
-        title: 67,
-        label: "Years Experience"
-      }
-    ]
-  })
+    //
+  }),
+  components: {
+    CollegeStats,
+    StartScreen
+  }
 };
 </script>
 
@@ -174,38 +138,7 @@ h6 {
   font-family: "Roboto Slab", serif !important;
 }
 #screen1 {
-  min-height: 50vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  // background-color: yellow;
   background-image: url("../assets/gallery.jpg");
-  background-size: cover;
-  background-position: center;
-  color: white;
-}
-
-#mainHeading {
-  font-weight: 900 !important;
-}
-
-#secondHeading {
-  font-weight: 600;
-}
-
-#screen1-content {
-  min-height: 50vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(black, 0.7);
-  z-index: 2;
-}
-hr {
-  width: 20%;
-  margin: 0 auto;
-  border-top: 5px solid aqua;
 }
 
 .screen2 {
@@ -213,23 +146,6 @@ hr {
   display: flex;
   justify-content: space-around;
   align-items: center;
-}
-
-#screen4 {
-  // height: 40vh;
-  min-height: 40vh;
-  display: flex;
-  justify-content: space-around;
-  align-content: space-around;
-  background-color: #1a237e;
-  color: white;
-}
-
-.screen4Card {
-  display: flex;
-  height: 15vh;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 #screen3 {

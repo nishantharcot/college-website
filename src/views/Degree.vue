@@ -4,93 +4,30 @@
       pageHeading="DEGREES"
       caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit phasellus trist."
     />
-    <v-row class="screen2">
-      <v-col cols="1"></v-col>
-      <v-col cols="12" sm="12" md="5">
-        <v-img src="../assets/degree-1.jpg"></v-img>
-      </v-col>
-      <v-col cols="12" sm="12" md="5">
-        <v-btn class="mb-5 ml-5" color="warning">$21,500</v-btn>
-        <h3 class="mb-5 ml-5">COMPUTER SCIENCE</h3>
-        <p class="ml-5">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu
-          mauris eleifend, rhoncus metus vel, vestibulum odio. Suspendisse eget
-          ante vel arcu pretium eleifend vel quis dolor. In aliquam, elit quis
-          lacinia ornare, nunc mauris aliquam erat, scelerisque laoreet nunc
-          lectus ut dui.
-        </p>
-      </v-col>
-      <v-col cols="1"></v-col>
-    </v-row>
-    <v-row class="screen2">
+    <v-row
+      v-for="degree in degreeDetails"
+      :key="degree.subject"
+      class="screen2"
+    >
       <v-col class="order-1" cols="1"></v-col>
       <v-col class="order-3" cols="12" sm="12" md="5">
-        <v-btn class="mb-5 ml-5" color="warning">$11,300</v-btn>
-        <h3 class="mb-5 ml-5">LIBERAL ARTS</h3>
-        <p class="ml-5">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu
-          mauris eleifend, rhoncus metus vel, vestibulum odio. Suspendisse eget
-          ante vel arcu pretium eleifend vel quis dolor. In aliquam, elit quis
-          lacinia ornare, nunc mauris aliquam erat, scelerisque laoreet nunc
-          lectus utd.
-        </p>
+        <v-btn class="mb-5 ml-5" color="warning">{{ degree.cost }}</v-btn>
+        <h3 class="mb-5 ml-5">{{ degree.subject }}</h3>
+        <p class="ml-5">{{ degree.content }}</p>
       </v-col>
       <v-col
-        v-if="$vuetify.breakpoint.mdAndUp"
+        v-if="$vuetify.breakpoint.mdAndUp && degree.id % 2 === 0"
         class="order-3"
         cols="12"
         sm="12"
         md="5"
       >
-        <v-img src="../assets/degree-2.jpg"></v-img>
+        <v-img :src="degree.image"></v-img>
+        <!-- <img :src="degree.image" /> -->
       </v-col>
       <v-col v-else class="order-2" cols="12" sm="12" md="5">
-        <v-img src="../assets/degree-2.jpg"></v-img>
-      </v-col>
-      <v-col class="order-4" cols="1"></v-col>
-    </v-row>
-    <v-row class="screen2">
-      <v-col cols="1"></v-col>
-      <v-col cols="12" sm="12" md="5">
-        <v-img src="../assets/degree-3.jpg"></v-img>
-      </v-col>
-      <v-col cols="12" sm="12" md="5">
-        <v-btn class="mb-5 ml-5" color="warning">$21,900</v-btn>
-        <h3 class="mb-5 ml-5">HUMANITIES</h3>
-        <p class="ml-5">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu
-          mauris eleifend, rhoncus metus vel, vestibulum odio. Suspendisse eget
-          ante vel arcu pretium eleifend vel quis dolor. In aliquam, elit quis
-          lacinia ornare, nunc mauris aliquam erat, scelerisque laoreet nunc
-          lectus ut dui.
-        </p>
-      </v-col>
-      <v-col cols="1"></v-col>
-    </v-row>
-    <v-row class="screen2">
-      <v-col class="order-1" cols="1"></v-col>
-      <v-col class="order-3" cols="12" sm="12" md="5">
-        <v-btn class="mb-5 ml-5" color="warning">$34,000</v-btn>
-        <h3 class="mb-5 ml-5">APPLIED SCIENCE</h3>
-        <p class="ml-5">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu
-          mauris eleifend, rhoncus metus vel, vestibulum odio. Suspendisse eget
-          ante vel arcu pretium eleifend vel quis dolor. In aliquam, elit quis
-          lacinia ornare, nunc mauris aliquam erat, scelerisque laoreet nunc
-          lectus utd.
-        </p>
-      </v-col>
-      <v-col
-        v-if="$vuetify.breakpoint.mdAndUp"
-        class="order-3"
-        cols="12"
-        sm="12"
-        md="5"
-      >
-        <v-img src="../assets/degree-4.jpg"></v-img>
-      </v-col>
-      <v-col v-else class="order-2" cols="12" sm="12" md="5">
-        <v-img src="../assets/degree-4.jpg"></v-img>
+        <v-img :src="degree.image"></v-img>
+        <!-- <img :src="degree.image" /> -->
       </v-col>
       <v-col class="order-4" cols="1"></v-col>
     </v-row>
@@ -119,7 +56,40 @@ import CollegeStats from "@/components/CollegeStats.vue";
 import StartScreen from "@/components/StartScreen.vue";
 export default {
   data: () => ({
-    //
+    degreeDetails: [
+      {
+        id: 1,
+        image: require("../assets/degree-1.jpg"),
+        cost: "$21,500",
+        subject: "COMPUTER SCIENCE",
+        content:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eumauris eleifend, rhoncus metus vel, vestibulum odio. Suspendisse egetante vel arcu pretium eleifend vel quis dolor. In aliquam, elit quis lacinia ornare, nunc mauris aliquam erat, scelerisque laoreet nunclectus ut dui."
+      },
+      {
+        id: 2,
+        image: require("../assets/degree-2.jpg"),
+        cost: "$11,300",
+        subject: "LIBERAL ARTS",
+        content:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eumauris eleifend, rhoncus metus vel, vestibulum odio. Suspendisse egetante vel arcu pretium eleifend vel quis dolor. In aliquam, elit quislacinia ornare, nunc mauris aliquam erat, scelerisque laoreet nunclectus utd."
+      },
+      {
+        id: 3,
+        image: require("../assets/degree-3.jpg"),
+        cost: "$21,900",
+        subject: "HUMANITIES",
+        content:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eumauris eleifend, rhoncus metus vel, vestibulum odio. Suspendisse egetante vel arcu pretium eleifend vel quis dolor. In aliquam, elit quis lacinia ornare, nunc mauris aliquam erat, scelerisque laoreet nunclectus ut dui."
+      },
+      {
+        id: 4,
+        image: require("../assets/degree-4.jpg"),
+        cost: "$34,000",
+        subject: "APPLIED SCIENCE",
+        content:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eumauris eleifend, rhoncus metus vel, vestibulum odio. Suspendisse egetante vel arcu pretium eleifend vel quis dolor. In aliquam, elit quislacinia ornare, nunc mauris aliquam erat, scelerisque laoreet nunclectus utd."
+      }
+    ]
   }),
   components: {
     CollegeStats,

@@ -1,7 +1,6 @@
 <template>
   <v-app id="inspire">
     <v-app-bar app>
-      <!-- <v-img src="./assets/collegeLogo.png"></v-img> -->
       <v-toolbar-title id="mainHeading" class="display-1">
         Becton College
       </v-toolbar-title>

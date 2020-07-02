@@ -1,5 +1,7 @@
 # becton-college
 
+# Site is live at https://determined-allen-7164db.netlify.app/
+
 ## Project setup
 ```
 npm install
